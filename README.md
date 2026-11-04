@@ -3,11 +3,6 @@
 A single-purpose dead man's switch for a Hetzner Cloud project, designed to run
 **on the very server it will eventually delete**.
 
-> `SPEC.md` §5.2 and §10 now mirror this README: the implementation runs on the
-> main server, so the main server is **never** powered off and its Primary IP is
-> **never** unassigned. (§5.2 of older revisions described the unsafe
-> power-off/unassign sequence and is explicitly marked as superseded.)
-
 You check in through a Telegram bot. If you stop answering for
 `GRACE_PERIOD_DAYS` (default **7 days**), the program:
 

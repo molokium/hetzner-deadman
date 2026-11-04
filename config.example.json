@@ -1,0 +1,62 @@
+{
+  "api": {
+    "base_url": "https://api.hetzner.cloud/v1",
+    "timeout_seconds": 30
+  },
+  "target": {
+    "main_server_id": 4711,
+    "main_primary_ip_ids": [900001, 900002],
+    "protected_ip_ids": [],
+    "protected_ips": [],
+    "reserve_main_ipv6": true,
+    "label_selector": ""
+  },
+  "telegram": {
+    "bot_token": "",
+    "chat_id": "",
+    "user_id": "",
+    "poll_timeout": 20
+  },
+  "lease": {
+    "checkin_interval_hours": 24,
+    "grace_period_days": 7,
+    "heartbeat_file": ""
+  },
+  "teardown": {
+    "retry_interval_seconds": 3600,
+    "max_retry_hours": 6,
+    "max_step_attempts": 1000,
+    "skip_step_after_max_retry_hours": true,
+    "require_snapshot_before_main_delete": false,
+    "protect_snapshot": true,
+    "abort_on_message_during_teardown": true,
+    "snapshot_description_prefix": "deadman-final-snapshot"
+  },
+  "timing": {
+    "tick_seconds": 30,
+    "action_poll_seconds": 2,
+    "action_timeout_seconds": 900,
+    "shutdown_grace_seconds": 180,
+    "poweroff_timeout_seconds": 120,
+    "image_timeout_seconds": 1800
+  },
+  "rate_limit": {
+    "floor": 50,
+    "max_wait_attempts": 3
+  },
+  "state": {
+    "dir": "/data",
+    "use_block_file": true,
+    "block_file_size_mb": 4
+  },
+  "billing": {
+    "mode": "none",
+    "webhook_url": "",
+    "command": [],
+    "timeout_seconds": 30
+  },
+  "dry_run": false,
+  "log": {
+    "level": "INFO"
+  }
+}

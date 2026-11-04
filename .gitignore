@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+data/
+releases/
+state.json
+state.json.bak
+state.block
+state.db
+SPEC.md
+cloud.spec.json
+deadman.log*
+.pytest_cache/

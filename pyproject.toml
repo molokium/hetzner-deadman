@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hetzner-deadman"
+version = "1.0.0"
+description = "Fault-tolerant dead man's switch for Hetzner Cloud projects"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "hetzner-deadman"}]
+dependencies = []
+
+[project.scripts]
+hetzner-deadman = "deadman.cli:main"
+deadman = "deadman.cli:main"
+
+[tool.setuptools]
+packages = ["deadman"]

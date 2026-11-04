@@ -1,0 +1,27 @@
+services:
+  deadman:
+    build: .
+    image: hetzner-deadman:latest
+    container_name: hetzner-deadman
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # Named volume is the simplest durable option.  To inspect the files from
+      # the host, replace with:  ./data:/data
+      - deadman-data:/data
+    # This software needs NO privileges.  It deliberately does not mount loop
+    # images (that would require CAP_SYS_ADMIN); state.block is a plain file.
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    stop_grace_period: 30s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  deadman-data:
